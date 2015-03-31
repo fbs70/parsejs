@@ -48,15 +48,11 @@
 			<div class="main-container">
 				<form class="form-signin">
 					        <h2 class="form-signin-heading">Please sign in</h2>
-					        <label for="inputEmail" class="sr-only">Email address</label>
-					        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+					        <label for="inputUsername" class="sr-only">UserNmae</label>
+							<input id="inputUsername" type="text" name="username" class="form-control" placeholder="Username" required autofocus>
+					      
 					        <label for="inputPassword" class="sr-only">Password</label>
-					        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-					        <div class="checkbox">
-					          <label>
-					            <input type="checkbox" value="remember-me"> Remember me
-					          </label>
-					        </div>
+							<input type="password" name="password" class="form-control" placeholder="Password">
 					        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
 				</form>
 			</div>
@@ -108,14 +104,34 @@
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
-	<script id="blogs-tpl" type="text/x-handlebars-template">
-		{{#each blog}}
-	    <div class="blog-post">
-	        <h2 class="blog-post-title"><a href="#">{{title}}</a></h2>
-	        <p class="blog-post-meta">At time by an author</p>
-	        <div>{{{content}}}</div>
+	<script id="login-tpl" type="text/x-handlebars-template">
+		<form class="form-signin" role="form">
+			<h2 class="form-signin-heading">Please sign in</h2>
+			<input type="text" name="username" class="form-control" placeholder="Username" required="" autofocus="">
+			<input type="password" name="password" class="form-control" placeholder="Password" required="">
+			<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+		</form>
+	</script>
+
+	<script id="welcome-tpl" type="text/x-handlebars-template">
+		<h2>Welcome, {{username}}!</h2>
+		<button class="add-blog btn btn-lg btn-primary">Add a New Blog</button>
+	</script>
+		
+	<script type="text/template" id="add-tpl">
+	  <h2>Adding a New Blog</h2>
+ 
+	  <form class="form-add" role="form">
+	    <div class="form-group">
+	      <label for="title">Title</label>
+	      <input type="text" name="title" class="form-control" id="title" placeholder="Enter Your Blog Title">
 	    </div>
-		{{/each}}
+	    <div class="form-group">
+	      <label for="content">Content</label>
+	      <textarea name="content" class="form-control" rows="20"></textarea>
+	    </div>
+	    <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+	  </form>
 	</script>
 	
     <!-- Placed at the end of the document so the pages load faster -->
